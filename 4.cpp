@@ -1,21 +1,24 @@
 #include <iostream>
+#include <string.h>
 using namespace std;
 
-void sum(int n){
-	int b[100],hasil=0;
-	for(int i=0; i<n; i++){
-		cin>>b[i];
-		hasil=hasil+b[i];
+void binari (int desimal){
+	int sisa,hasil;
+	if(desimal <=1){
+		cout<<desimal;
+		return;
 	}
-	cout<<endl<<"Hasil Penjumlahan : "<<hasil;
+	sisa=desimal %2;
+	hasil=desimal /2;
+	binari(hasil);
+	cout<<sisa;
 }
 
-int main()
-{
-	int n;
-	cout<<"Jumlah bilangan : ";
-	cin>>n;
-	sum(n);
-	return 0;
+int main (){
+	int angka,biner,sisa,hasil;
+	
+	cout<<"Masukkan Angka Desimal : ";
+	cin>>angka;
+	cout<<"Masukkan Binarinya Adalah : ";
+	binari(angka);
 }
-
